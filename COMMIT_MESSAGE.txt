@@ -1,0 +1,19 @@
+refactor: improve memory manager API and remove code hacks
+
+- Add public get_by_type() and delete() methods to MemoryManager
+- Replace direct _store access with proper public API calls
+- Remove TODO comments and technical debt in dashboard.py
+- Update memory tools and agents to use new public methods
+- Clean up README.md by removing outdated placeholders
+
+This change improves code encapsulation and maintainability by
+providing proper public APIs instead of accessing private _store
+attributes directly. All memory operations now go through the
+MemoryManager facade as intended.
+
+Fixes:
+- Dashboard API endpoints for memory management
+- Memory forget tool implementation
+- Native agent memory deletion
+
+Breaking changes: None (new methods are additions, not modifications)
